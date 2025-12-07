@@ -1,18 +1,19 @@
 package main
 
 import (
-	"GetInfoFromHLTB/client"
-	"GetInfoFromHLTB/models"
-	"GetInfoFromHLTB/utils"
 	"fmt"
 	"log"
+
+	client "github.com/Gladarfin/GetInfoFromHLTB/client"
+	models "github.com/Gladarfin/GetInfoFromHLTB/models"
+	utils "github.com/Gladarfin/GetInfoFromHLTB/utils"
 )
 
 func main() {
 
 	hltbClient := client.New()
 
-	singleGameResponse, err := hltbClient.Search("Portal", models.SearchOptions{
+	singleGameResponse, err := hltbClient.Search("Space Rangers", models.SearchOptions{
 		FilterDLC:  true,
 		FilterMods: true,
 		MaxResults: 1,

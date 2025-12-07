@@ -1,7 +1,6 @@
 package client
 
 import (
-	"GetInfoFromHLTB/models"
 	"bytes"
 	"context"
 	"encoding/json"
@@ -12,6 +11,8 @@ import (
 	"regexp"
 	"strings"
 	"time"
+
+	"github.com/Gladarfin/GetInfoFromHLTB/models"
 )
 
 // Search searches for a game with the specified options

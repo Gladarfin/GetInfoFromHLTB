@@ -1,8 +1,9 @@
 package utils
 
 import (
-	"GetInfoFromHLTB/models"
 	"fmt"
+
+	"github.com/Gladarfin/GetInfoFromHLTB/models"
 )
 
 func SecondsToHours(seconds int) float64 {
@@ -21,6 +22,12 @@ func FormatGameInfo(game models.GameData) string {
 
 	if game.CompMain > 0 {
 		result += fmt.Sprintf("Main story: %s; ", FormatHours(SecondsToHours(game.CompMain)))
+	} else if game.CompPlus > 0 {
+		result += fmt.Sprintf("Main + Extra: %s; ", FormatHours(SecondsToHours(game.CompPlus)))
+	} else if game.Comp100 > 0 {
+		result += fmt.Sprintf("100%%: %s; ", FormatHours(SecondsToHours(game.Comp100)))
+	} else if game.CompAll > 0 {
+		result += fmt.Sprintf("All styles: %s; ", FormatHours(SecondsToHours(game.CompAll)))
 	}
 
 	if game.ReviewScore > 0 {
