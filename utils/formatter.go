@@ -18,16 +18,16 @@ func FormatHours(hours float64) string {
 func FormatGameInfo(game models.GameData) string {
 	var result string
 
-	result += fmt.Sprintf("Game: %s; ", game.GameName)
+	result += fmt.Sprintf("Game: %s(%d) | ", game.GameName, game.ReleaseWorld)
 
 	if game.CompMain > 0 {
-		result += fmt.Sprintf("Main story: %s; ", FormatHours(SecondsToHours(game.CompMain)))
+		result += fmt.Sprintf("Main story: %s | ", FormatHours(SecondsToHours(game.CompMain)))
 	} else if game.CompPlus > 0 {
-		result += fmt.Sprintf("Main + Extra: %s; ", FormatHours(SecondsToHours(game.CompPlus)))
+		result += fmt.Sprintf("Main + Extra: %s | ", FormatHours(SecondsToHours(game.CompPlus)))
 	} else if game.Comp100 > 0 {
-		result += fmt.Sprintf("100%%: %s; ", FormatHours(SecondsToHours(game.Comp100)))
+		result += fmt.Sprintf("100%%: %s | ", FormatHours(SecondsToHours(game.Comp100)))
 	} else if game.CompAll > 0 {
-		result += fmt.Sprintf("All styles: %s; ", FormatHours(SecondsToHours(game.CompAll)))
+		result += fmt.Sprintf("All styles: %s | ", FormatHours(SecondsToHours(game.CompAll)))
 	}
 
 	if game.ReviewScore > 0 {
